@@ -13,7 +13,7 @@ jobs:
     steps:
       - browser-tools/install-browser-tools
       - checkout
-      - run: mkdir test-reports
+      - run: mkdir test-results
       - run:
           name: Install Python requirements in a venv
           command: |
@@ -24,7 +24,6 @@ jobs:
           name: Run Selenium tests
           command: |
             . venv/bin/activate
-            pytest --driver Chrome
-      - store_artifacts:
-          path: test-reports/
-          destination: test-reports
+            pytest --driver Chrome --junitxml=test-results/junit.xml
+      - store_test_results:
+          path: test-results
