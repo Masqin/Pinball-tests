@@ -1,6 +1,7 @@
 from selenium import webdriver
 
 def test_title(selenium):
+    """Tests site title"""
     # driver = webdriver.Chrome(service_args=["--verbose", "--log-path=test-reports/chrome.log"])
 
     selenium.get("https://9gag.com")
