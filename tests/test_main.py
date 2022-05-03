@@ -1,15 +1,15 @@
 from selenium import webdriver
 
-def test_title(selenium):
+def test_title():
     """Tests site title"""
-    # driver = webdriver.Chrome(service_args=["--verbose", "--log-path=test-reports/chrome.log"])
+    driver = webdriver.Chrome(service_args=["--verbose", "--log-path=test-reports/chrome.log"])
 
-    selenium.get("https://9gag.com")
+    driver.get("https://9gag.com")
 
-    selenium.implicitly_wait(0.5)
+    driver.implicitly_wait(0.5)
 
-    print(selenium.title)
+    print(driver.title)
 
-    assert selenium.title == "9GAG: Go Fun The World"
+    assert driver.title == "9GAG: Go Fun The World"
 
-    selenium.quit()
+    driver.quit()
