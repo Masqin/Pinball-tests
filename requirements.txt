@@ -1,4 +1,4 @@
 setuptools
 selenium
 webdriver-manager
-pytest-selenium
+allure-pytest
